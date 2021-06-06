@@ -175,12 +175,12 @@ html {
 }
 
 body {
-  --color-text: #4800d4;
-  --color-bg: #e8e8e8;
+  --color-text: #eae7f0;
+  --color-bg: #252424;
   --color-link: #ec1752;
   --color-link-hover: #eb1851;
   --color-info: #272526;
-  --grid-item-bg: #f1f1f1;
+  --grid-item-bg: #181818;
   --color-close: #ec1752;
   font-family: Futura, "futura-pt", sans-serif;
   min-height: 100vh;
@@ -349,7 +349,7 @@ main {
 }
 
 .grid__item {
-  width: 260px;
+  width: 300px;
   position: relative;
   padding: 2.75rem;
   margin-bottom: 5rem;
@@ -477,6 +477,7 @@ main {
   padding: 0 5vw;
   white-space: nowrap;
   grid-area: 1 / 1 / 1 / 1;
+  color: var(--color-link);
   opacity: 0.2;
 }
 
@@ -580,7 +581,7 @@ main {
   position: relative;
   border: none;
   text-decoration: none;
-  padding: 0.66vw 1.33vw;
+  padding: 10px 20px;
   background-color: var(--grid-item-bg);
   color: var(--color-text);
   border: var(--color-text) 1px solid;
@@ -630,6 +631,9 @@ main {
   .title__sub-works {
     display: block;
   }
+  .grid__item {
+    width: 260px;
+  }
   .grid__item-number {
     right: -2.45rem;
   }
@@ -648,6 +652,8 @@ main {
   }
   .content__indicator {
     display: block;
+    fill: var(--color-link);
+    pointer-events: all;
   }
   .a-about {
     padding-bottom: 5.33vw;
@@ -664,5 +670,14 @@ main {
   .contact__form-item {
     min-width: unset;
     max-width: 30vw;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
   }
 }
