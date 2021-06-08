@@ -272,6 +272,8 @@
 			this.DOM = {el: el};
 			// The grid wrap.
 			this.DOM.gridWrap = this.DOM.el.parentNode;
+			// The about section.
+			this.DOM.aboutWrap = document.querySelector(".about-wrap")
 			// The grid items.
             this.items = [];
             Array.from(this.DOM.el.querySelectorAll('.grid__item')).forEach(itemEl => this.items.push(new GridItem(itemEl)));
@@ -379,8 +381,9 @@
 					contentEl.DOM.img.style.visibility = 'visible';
 					// Set the main content wrapper to absolute so it´s position at the top.
 					contentEl.DOM.el.parentNode.style.position = 'absolute';
-					// Hiding the grid scroll.
+					// Hiding the grid scroll & about section.
 					this.DOM.gridWrap.classList.add('grid-wrap--hidden');
+					this.DOM.aboutWrap.classList.add('about-wrap--hidden');
 					// Scroll up the page.
 					window.scrollTo(0, 0);
 					// Enable page scrolling.
@@ -399,8 +402,9 @@
 			contentEl.DOM.el.parentNode.style.position = 'fixed';
 			// Disable page scrolling.
 			disableScroll();
-			// Showing the grid scroll.
+			// Showing the grid scroll & about section.
 			this.DOM.gridWrap.classList.remove('grid-wrap--hidden');
+			this.DOM.aboutWrap.classList.remove('about-wrap--hidden');
 			// The item that is open.
 			const item = this.items[this.current];
 			// Hide the back control and scroll indicator and all the item´s content elements.
